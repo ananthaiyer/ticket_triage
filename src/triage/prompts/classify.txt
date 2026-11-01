@@ -1,0 +1,12 @@
+Classify the IT support ticket below and suggest a brief first reply.
+
+Return ONLY a valid JSON object — no markdown, no explanation — with exactly these fields:
+  "category": one of "hardware", "software", "access", "network", "email", "other"
+  "urgency":  one of "low", "medium", "high"
+  "reason":   one sentence explaining why you chose these labels
+  "suggested_reply": a short, friendly first reply (2-3 sentences) to the employee
+
+Subject: {subject}
+
+Body:
+{body}
