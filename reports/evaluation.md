@@ -1,5 +1,14 @@
 # Classifier Evaluation Report
 
+
+## My conclusions
+
+The LLM classifier clearly performs better than the baseline, with 82% accuracy on category and 78% on urgency, compared to 54% and 44% for the baseline. Urgency is where the baseline struggles, which is expected because it is very context dependent. For example, a deadline in the afternoon or a whole team being affected makes a ticket urgent, and a TF-IDF model cannot really pick this up from keywords. The LLM costs around $1.40 per 1,000 tickets and takes about 2 seconds per ticket, which I think is okay for an IT support team, and the baseline is still useful as a free and fast fallback if the API is not available.
+
+There are some limitations to these results. The tickets and labels were generated with Claude, and the LLM classifier also uses Claude, so the results might be too optimistic compared to real tickets. I checked all 50 evaluation tickets by hand and corrected 3 labels, but 50 tickets is still a small test set. Looking at the errors, I also noticed that a ransomware warning was labelled as software, while it is really a security issue, so I think the categories should include a separate security category in the future.
+
+
+
 Generated: 2026-11-01 12:48 UTC  
 Eval set: 50 tickets (stratified by category, seed=42)
 
